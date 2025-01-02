@@ -4,7 +4,9 @@ function App() {
   const [count, setCount] = useState(0);
 
   function increase() {
+   if(count < 10){
     setCount((prevCount) => prevCount + 1);
+   }
   }
 
   function decrease() {
