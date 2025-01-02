@@ -3,10 +3,21 @@ import { useState } from 'react';
 function App() {
   const [count, setCount] = useState(0);
 
+  function increase() {
+    setCount((prevCount) => prevCount + 1);
+  }
+
+  function decrease() {
+    if (count > 0) {
+      setCount((prevCount) => prevCount - 1);
+    }
+  }
+
   return (
     <>
       <h1>Current count is: {count}</h1>
-      <button onClick={() => setCount((prevCount) => prevCount + 1)}>+</button>
+      <button onClick={increase}>+</button>
+      <button onClick={decrease}>-</button>
     </>
   );
 }
