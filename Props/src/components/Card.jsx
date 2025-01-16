@@ -1,14 +1,11 @@
-// Import React and PropTypes
-// import React from 'react';
-// import PropTypes from 'prop-types';
+const Card = ({values}) => {
+  const { image, title, description, friends, handleClick } = values;
 
-const Card = (props) => {
-  const { image, title, description } = props;
   return (
     <div className="max-w-xs p-6 rounded-md shadow-md bg-black">
       <img
         src={image}
-        alt=""
+        alt={title}
         className="object-cover object-center w-full rounded-md h-72 bg-gray-500"
       />
       <div className="mt-6 mb-2">
@@ -17,15 +14,14 @@ const Card = (props) => {
         </span>
       </div>
       <p className="text-gray-300">{description}</p>
+      <button
+        className="bg-white text-black mt-3 px-4 py-1 rounded-full"
+        onClick={()=>handleClick} // Button click triggers handleClick
+      >
+        {friends ? "Friends" : "Add Friend"}
+      </button>
     </div>
   );
 };
-
-// // Add prop validation using PropTypes
-// Card.propTypes = {
-//   image: PropTypes.string.isRequired, // Required prop of type string
-//   title: PropTypes.string.isRequired, // Required prop of type string
-//   description: PropTypes.string.isRequired, // Required prop of type string
-// };
 
 export default Card;
