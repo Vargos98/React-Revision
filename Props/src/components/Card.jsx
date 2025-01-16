@@ -1,5 +1,5 @@
-const Card = ({values}) => {
-  const { image, title, description, friends, handleClick } = values;
+const Card = ({values,handleClick}) => {
+  const { image, title, description, friends } = values;
 
   return (
     <div className="max-w-xs p-6 rounded-md shadow-md bg-black">
@@ -16,7 +16,7 @@ const Card = ({values}) => {
       <p className="text-gray-300">{description}</p>
       <button
         className="bg-white text-black mt-3 px-4 py-1 rounded-full"
-        onClick={()=>handleClick} // Button click triggers handleClick
+        onClick={handleClick} // Button click triggers handleClick
       >
         {friends ? "Friends" : "Add Friend"}
       </button>

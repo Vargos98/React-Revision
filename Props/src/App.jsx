@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Card from "./components/Card"
 
 const data = [
@@ -78,11 +79,14 @@ const handleClick = () => {
 };
 
 const App = () => {
+  const [realData, setData] = useState(data)
   return (
     <div className="flex justify-center flex-wrap gap-10 bg-zinc-900">
-      {data.map((item, index) => (
+      {realData.map((item, index) => (
         <Card
-         values={item}  key={index}
+         values={item}  
+         key={index}
+         handleClick={handleClick}
         />
       ))}
     </div>
