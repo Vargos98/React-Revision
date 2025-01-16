@@ -74,19 +74,28 @@ const data = [
   }
 ];
 
-const handleClick = () => {
-  alert("Click");
-};
+
 
 const App = () => {
   const [realData, setData] = useState(data)
+  const handleClick = (frndIndex) => {
+  setData((prev)=>(
+    prev.map((item, index)=>{
+      if(index === frndIndex)
+      {
+        return {...item, friends: !item.friends}
+      }
+      return item;
+    })
+  ))
+};
   return (
     <div className="flex justify-center flex-wrap gap-10 bg-zinc-900">
       {realData.map((item, index) => (
         <Card
          values={item}  
          key={index}
-         handleClick={handleClick}
+         handleClick={()=>handleClick(index)}
         />
       ))}
     </div>
