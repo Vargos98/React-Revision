@@ -1,4 +1,5 @@
 import One from "./components/one"
+import Two from "./components/Two"
 
 
 
@@ -9,6 +10,7 @@ function App() {
    
     <div>
      <One />
+     <Two />
     </div>
   )
 }
