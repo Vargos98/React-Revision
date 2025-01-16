@@ -1,4 +1,4 @@
-const Card = ({values,handleClick}) => {
+const Card = ({ values, handleClick }) => {
   const { image, title, description, friends } = values;
 
   return (
