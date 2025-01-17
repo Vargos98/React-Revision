@@ -1,26 +1,14 @@
 import One from "./Components/One";
 import Two from "./Components/Two";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
+// This method uses on click feature using a button to fetch data.
 function App() {
-  return (
-    <Router>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/One">Simple Fetching Data</Link>
-          </li>
-          <li>
-            <Link to="/Two">Data Fetching Using useEffect</Link>
-          </li>
-        </ul>
-      </nav>
-      <Routes>
-        <Route path="/One" element={<One />} />
-        <Route path="/Two" element={<Two />} />
-      </Routes>
-    </Router>
-  );
+  return(
+    <div>
+      <One />
+      <Two />
+    </div>
+  )
 }
 
 export default App;
