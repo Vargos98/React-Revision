@@ -1,26 +1,26 @@
-import { useState } from "react";
+import React from "react";
+import Sidebar from "./components/Sidebar";
+import BalanceDetails from "./components/BalanceDetails";
+import FeesCard from "./components/FeesCard";
+import TransactionsList from "./components/TransactionsList";
+import WalletsSection from "./components/WalletsSection";
+import SecuritySettings from "./components/SecuritySettings";
 
-const App = () => {
-  const [color, setColor] = useState("Olive");
-
-  const colors = ["orange", "yellow", "green", "blue", "olive", "red"];
-
-  return (
-    <div style={{ background: color }} className="w-full h-screen">
-      <div className="max-w-screen-xl mx-auto bg-black rounded-lg px-4 py-8 flex flex-wrap justify-center gap-4">
-        {colors.map((clr) => (
-          <button
-            key={clr}
-            className="border-none px-4 py-3 bg-white rounded-br-full"
-            style={{ backgroundColor: clr }}
-            onClick={() => setColor(clr)}
-          >
-            {clr.charAt(0).toUpperCase() + clr.slice(1)}
-          </button>
-        ))}
+const App = () => (
+  <div className="flex h-screen bg-lightGray">
+    <Sidebar />
+    <main className="flex-1 p-6 space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <BalanceDetails />
+        <FeesCard />
       </div>
-    </div>
-  );
-};
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <TransactionsList />
+        <WalletsSection />
+      </div>
+      <SecuritySettings />
+    </main>
+  </div>
+);
 
 export default App;

@@ -1,27 +1,26 @@
-import { useState } from 'react';
+import React from "react";
+import Sidebar from "./components/Sidebar";
+import BalanceDetails from "./components/BalanceDetails";
+import FeesCard from "./components/FeesCard";
+import TransactionsList from "./components/TransactionsList";
+import WalletsSection from "./components/WalletsSection";
+import SecuritySettings from "./components/SecuritySettings";
 
-function App() {
-  const [count, setCount] = useState(0);
-
-  function increase() {
-   if(count < 10){
-    setCount((prevCount) => prevCount + 1);
-   }
-  }
-
-  function decrease() {
-    if (count > 0) {
-      setCount((prevCount) => prevCount - 1);
-    }
-  }
-
-  return (
-    <>
-      <h1>Current count is: {count}</h1>
-      <button onClick={increase}>+</button>
-      <button onClick={decrease}>-</button>
-    </>
-  );
-}
+const App = () => (
+  <div className="flex h-screen bg-lightGray">
+    <Sidebar />
+    <main className="flex-1 p-6 space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <BalanceDetails />
+        <FeesCard />
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <TransactionsList />
+        <WalletsSection />
+      </div>
+      <SecuritySettings />
+    </main>
+  </div>
+);
 
 export default App;
