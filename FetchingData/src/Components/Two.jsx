@@ -22,6 +22,8 @@ const Two = () => {
   
   if(loading) return <h1>Loading...</h1>;
 
+
+
   return (
     <div className="min-h-screen bg-zinc-800 text-white p-10 flex flex-col items-center">
       <h1 className="text-3xl font-bold mb-6 text-center">

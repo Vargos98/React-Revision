@@ -1,14 +1,20 @@
 import { useState } from "react";
 import axios from "axios";
 const One = () => {
-  const [product, setProducts] = useState([]);
+  // const [product, setProducts] = useState([]);
 
-  const fetchData = async () => {
-    await axios
-      .get("https://fakestoreapi.com/products")
-      .then((res) =>setProducts(res.data))
-      .catch((err) => console.log(err));
-  };
+  // const fetchData = async () => {
+  //   await axios
+  //     .get("https://fakestoreapi.com/products")
+  //     .then((res) =>setProducts(res.data))
+  //     .catch((err) => console.log(err));
+  // };
+
+  const [product, setProducts] = useState([]);
+  const fetchData = () => {
+    axios.get("https://fakestoreapi.com/products").then((res) => setProducts(res.data))
+      .catch((err) => console.log(err))
+  }
 
   return (
     <div className="min-h-screen bg-zinc-800 text-white p-10 flex flex-col items-center">
